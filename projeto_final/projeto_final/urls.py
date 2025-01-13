@@ -17,14 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from api.views import UserViewSet
 from api.views import home
 
 router = DefaultRouter()
-router.register('users', UserViewSet, basename='user')
+
 
 urlpatterns = [
-     path('', home, name='home'),  # Rota para a página inicial
+    path('', home, name='home'),  # Rota para a página inicial
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),  # Inclui as rotas da API
+    path('api/', include(router.urls)),  # Inclui as rotas da API   
+   
+
+    
 ]
